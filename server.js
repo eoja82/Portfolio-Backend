@@ -43,13 +43,13 @@ app.route("/contact")
       transporter.sendMail(mailOptions, function(err, info) {
         if (err) {
           console.log(err)
-          res.json({message: "Sorry, something went wrong.  Please try again."})
+          res.json({error: "Sorry, something went wrong.  Please try again."})
         } else {
-          res.json({message: "Thanks for getting in touch.  Your message has been sent.", success: "true"})
+          res.json({success: "Thanks for getting in touch.  Your message has been sent."})
         }
       })
     } else {
-      res.json({message: "Please fill out all fields"})
+      res.json({message: "Please fill out all fields."})
     }
   })
 
